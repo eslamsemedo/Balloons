@@ -87,15 +87,3 @@ export default function Home() {
     </>
   );
 }
-
-
-
-
-
-
-
-function Gallery4Demo() {
-  return;
-}
-
-export { Gallery4Demo };
