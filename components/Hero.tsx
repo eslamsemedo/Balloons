@@ -2,6 +2,7 @@
 import React, { useEffect, useMemo, useState, useRef } from "react";
 import { Facebook, Instagram, Search, User } from "lucide-react";
 import Image from "next/image";
+import MobileNav from "./MobileNav";
 
 /**
  * HotAirHero Slideshow (TSX + Tailwind)
@@ -158,7 +159,7 @@ export default function HotAirHero({
               {nav.map((item, i) => (
                 <li key={item} className="relative pb-3">
                   <a
-                    href="#"
+                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
                     className={`transition-colors hover:opacity-100 ${i === 0 ? "opacity-100" : "opacity-80"
                       }`}
                   >
@@ -173,20 +174,26 @@ export default function HotAirHero({
           </nav>
         </div>
 
-        {/* Right cluster: social + actions */}
-        <div className="hidden items-center gap-6 md:flex">
-          <a href="#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
-            <Facebook size={18} />
-          </a>
-          <a href="#" aria-label="Instagram" className="opacity-90 hover:opacity-100">
-            <Instagram size={18} />
-          </a>
-          <button aria-label="Search" className="opacity-90 hover:opacity-100">
-            <Search size={18} />
-          </button>
-          <button aria-label="Account" className="opacity-90 hover:opacity-100">
-            <User size={18} />
-          </button>
+        {/* Right cluster: social + actions + mobile nav */}
+        <div className="flex items-center gap-6">
+          {/* Desktop social + actions */}
+          <div className="hidden items-center gap-6 md:flex">
+            <a href="#" aria-label="Facebook" className="opacity-90 hover:opacity-100">
+              <Facebook size={18} />
+            </a>
+            <a href="#" aria-label="Instagram" className="opacity-90 hover:opacity-100">
+              <Instagram size={18} />
+            </a>
+            {/* <button aria-label="Search" className="opacity-90 hover:opacity-100">
+              <Search size={18} />
+            </button>
+            <button aria-label="Account" className="opacity-90 hover:opacity-100">
+              <User size={18} />
+            </button> */}
+          </div>
+
+          {/* Mobile Navigation */}
+          <MobileNav navItems={nav} />
         </div>
       </header>
 

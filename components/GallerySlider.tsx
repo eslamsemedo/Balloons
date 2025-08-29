@@ -68,7 +68,7 @@ export default function GallerySlider({
   }, [api, recalc]);
 
   return (
-    <section className="px-4 py-12">
+    <section id="gallery" className="px-4 py-12">
       <div className="mx-auto max-w-7xl">
         <div className="flex items-center justify-end gap-2 pb-4">
           <button
@@ -111,7 +111,7 @@ export default function GallerySlider({
                     "rounded-2xl overflow-hidden shadow",
                     "transition-transform duration-300 will-change-transform",
                     "origin-center",
-                    selected === i ? "shadow-lg" : "shadow",
+                    selected === i ? "shadow-lg " : "shadow",
                   ].join(" ")}
                   style={{
                     transform: `scale(${scales[i] ?? 1})`,
@@ -122,7 +122,7 @@ export default function GallerySlider({
                     <img
                       src={img.src}
                       alt={img.alt ?? "Gallery image"}
-                      className="absolute inset-0 h-full w-full object-cover"
+                      className="absolute inset-0 h-full w-full object-cover "
                       draggable={false}
                     />
                   </div>

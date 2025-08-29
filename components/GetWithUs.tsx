@@ -22,7 +22,7 @@ const features = [
 ];
 const GetWithUs = () => {
   return (
-    <section className="padd">
+    <section id="guides" className="padd">
       <div className="mx-auto max-w-7xl">
         {/* Heading */}
         <h2 className="text-center text-2xl font-semibold md:text-3xl">

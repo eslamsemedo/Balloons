@@ -30,18 +30,18 @@ const OurBlog = () => {
   ];
 
   return (
-    <div>
+    <div id="contacts">
       <section className="px-4 py-20 md:py-24 flex flex-col gap-12">
-        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 items-center p-6 gap-12 md:grid-cols-2">
           {/* Left: Heading + Button */}
           <div className="space-y-8">
             <h2 className="text-3xl font-bold leading-tight md:text-4xl lg:text-5xl">
               Our blog about <br /> Cappadocia
             </h2>
 
-            <button className="inline-flex items-center rounded-xl bg-[#9B6B5A] px-6 py-3 text-white font-medium shadow-sm transition hover:bg-[#865746]">
+            {/* <button className="inline-flex items-center rounded-xl bg-[#9B6B5A] px-6 py-3 text-white font-medium shadow-sm transition hover:bg-[#865746]">
               Read More
-            </button>
+            </button> */}
           </div>
 
           {/* Right: Description */}

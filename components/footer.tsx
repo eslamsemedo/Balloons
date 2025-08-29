@@ -1,4 +1,5 @@
 import React from "react";
+import { Phone, Mail, MapPin } from "lucide-react";
 
 const FooterHotair: React.FC = () => {
   return (
@@ -93,12 +94,9 @@ const FooterHotair: React.FC = () => {
             <h4 className="text-lg font-semibold mb-4">Communication</h4>
             <ul className="space-y-4 text-white/90">
               <li className="flex items-start gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/40">
-                  {/* phone icon */}
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07A19.5 19.5 0 0 1 3.16 8.8 19.8 19.8 0 0 1 .09 0.18 2 2 0 0 1 2.06 0H5a2 2 0 0 1 2 1.72 12.7 12.7 0 0 0 .7 2.78 2 2 0 0 1-.45 2.11L6.2 8.2a16 16 0 0 0 9.6 9.6l1.6-1.05a2 2 0 0 1 2.11-.45 12.7 12.7 0 0 0 2.78.7A2 2 0 0 1 22 16.92z" />
-                  </svg>
-                </span>
+                {/* <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/40">
+                </span> */}
+                {/* <Phone className="h-5 w-5" /> */}
                 <div>
                   <div className="text-white/70">Drop a line</div>
                   <div className="font-medium">+123 456 789</div>
@@ -106,13 +104,9 @@ const FooterHotair: React.FC = () => {
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/40">
-                  {/* mail icon */}
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-                    <rect x="3" y="5" width="18" height="14" rx="2" />
-                    <path d="M3 7l9 6 9-6" />
-                  </svg>
-                </span>
+                {/* <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/40">
+                </span> */}
+                {/* <Mail className="h-9 w-9" /> */}
                 <div>
                   <div className="text-white/70">Email Address</div>
                   <a href="#" className="font-medium hover:underline">
@@ -122,13 +116,9 @@ const FooterHotair: React.FC = () => {
               </li>
 
               <li className="flex items-start gap-3">
-                <span className="inline-flex h-9 w-9 items-center justify-center rounded-lg border border-white/40">
-                  {/* pin icon */}
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="none" stroke="currentColor" strokeWidth="2">
-                    <path d="M12 22s7-4.35 7-11a7 7 0 0 0-14 0c0 6.65 7 11 7 11z" />
-                    <circle cx="12" cy="11" r="3" />
-                  </svg>
-                </span>
+                {/* <span className="inline-flex h-12 w-12 items-center justify-center rounded-lg border border-white/40">
+                </span> */}
+                {/* <MapPin className="h-6 w-6" /> */}
                 <div>
                   <div className="text-white/70">Visit Office</div>
                   <div className="font-medium">

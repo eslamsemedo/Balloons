@@ -2,7 +2,7 @@ import Image from "next/image"
 
 export default function AboutUsSection() {
   return (
-    <section className="padd">
+    <section id="about" className="padd">
       <div className="grid lg:grid-cols-2 gap-12 items-center">
         {/* Image Section */}
         <div className="relative">
@@ -33,7 +33,13 @@ export default function AboutUsSection() {
             </p>
           </div>
 
-          <button className="bg-main hover:bg-main/80 text-white px-8 py-3 rounded-2xl text-lg font-medium transition-colors duration-200 cursor-pointer">
+          <button
+            onClick={() => {
+              const element = document.getElementById('our-tours');
+              element?.scrollIntoView({ behavior: 'smooth' });
+            }}
+            className="bg-main hover:bg-main/80 text-white px-8 py-3 rounded-2xl text-lg font-medium transition-colors duration-200 cursor-pointer focus:outline-none focus:ring-2 focus:ring-main/50"
+          >
             Read More
           </button>
         </div>

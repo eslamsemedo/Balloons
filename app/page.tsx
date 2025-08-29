@@ -1,3 +1,5 @@
+"use client"
+
 import AboutUsSection from "@/components/about-us-section";
 import { Gallery4, Gallery4Props } from "@/components/cardTrips";
 import Explore from "@/components/Explore";
@@ -8,6 +10,7 @@ import OurBlog from "@/components/OurBlog";
 import { DemoOne } from "./demo";
 import Form from "@/components/form";
 import HotAirHero from "@/components/Hero";
+import ScrollToTop from "@/components/ScrollToTop";
 
 
 export default function Home() {
@@ -84,6 +87,7 @@ export default function Home() {
       <OurBlog />
       <DemoOne />
       <Form />
+      <ScrollToTop />
     </>
   );
 }

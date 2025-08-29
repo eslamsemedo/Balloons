@@ -6,6 +6,10 @@
   --color-sec: #000000;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .padd {
   @apply px-8 py-16 max-w-7xl mx-auto;
 }

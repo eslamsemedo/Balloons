@@ -2,7 +2,7 @@ import React from 'react'
 
 const ExploreMore = () => {
   return (
-    <div>
+    <div id="explore">
       <section className="padd">
         <div className="grid grid-cols-1 items-center gap-12 md:grid-cols-2">
           {/* Left content */}
@@ -17,7 +17,13 @@ const ExploreMore = () => {
               attractions of this magical region.
             </p>
 
-            <button className="rounded-lg bg-[#9B6B5A] px-6 py-3 text-white font-medium hover:bg-[#865746] transition">
+            <button
+              onClick={() => {
+                const element = document.getElementById('gallery');
+                element?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="rounded-lg bg-[#9B6B5A] px-6 py-3 text-white font-medium hover:bg-[#865746] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9B6B5A]/50"
+            >
               Open Gallery
             </button>
           </div>

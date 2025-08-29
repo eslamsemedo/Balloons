@@ -78,6 +78,13 @@ const Gallery4 = ({
   description = "Discover how leading companies and developers are leveraging modern web technologies to build exceptional digital experiences. These case studies showcase real-world applications and success stories.",
   items = data,
 }: Gallery4Props) => {
+  // Function to generate WhatsApp URL with trip details
+  const generateWhatsAppUrl = (trip: Gallery4Item) => {
+    const phoneNumber = "+1234567890"; // Replace with your actual WhatsApp number
+    const message = `Hi! I'm interested in booking the trip: ${trip.title}. Can you provide more details about this trip?`;
+    const encodedMessage = encodeURIComponent(message);
+    return `https://wa.me/${phoneNumber}?text=${encodedMessage}`;
+  };
   const [carouselApi, setCarouselApi] = useState<CarouselApi>();
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(false);
@@ -135,7 +142,7 @@ const Gallery4 = ({
           </div>
         </div>
       </div>
-      <div className="w-full">
+      <div className="padd">
         <Carousel
           setApi={setCarouselApi}
           opts={{
@@ -146,7 +153,7 @@ const Gallery4 = ({
             },
           }}
         >
-          <CarouselContent className="ml-0 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
+          <CarouselContent className=" 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
             {/* {items.map((item) => (
               <CarouselItem
                 key={item.id}
@@ -216,12 +223,12 @@ const Gallery4 = ({
                         <span className="font-semibold">100$</span>
                         <span className="text-muted-foreground"> /per person</span>
                       </div>
-                      <a
-                        href={item.href}
-                        className="text-sm font-medium text-blue-600 hover:underline"
+                      <button
+                        onClick={() => window.open(generateWhatsAppUrl(item), '_blank', 'noopener,noreferrer')}
+                        className="text-sm font-medium text-blue-600 hover:underline bg-transparent border-none cursor-pointer"
                       >
                         Book now
-                      </a>
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -89,8 +89,8 @@ const DemoOne = () => {
   return (
     <div className="min-h-screen">
       {/* Example 1: Basic Carousel */}
-      <section className="w-full bg-white padd">
-        <div className="max-w-4xl">
+      <section className="w-full bg-white md:padd">
+        <div className="padd">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
             Our professional guides
           </h2>
