@@ -3,8 +3,7 @@ import nodemailer from "nodemailer";
 
 // TypeScript types for the request body
 interface ContactFormData {
-  name: string;
-  surname: string;
+  fullName: string;
   email: string;
   phone: string;
   date?: string;
@@ -13,8 +12,7 @@ interface ContactFormData {
 // Validation function
 function validateFormData(data: any): data is ContactFormData {
   return (
-    typeof data.name === 'string' && data.name.trim().length > 0 &&
-    typeof data.surname === 'string' && data.surname.trim().length > 0 &&
+    typeof data.fullName === 'string' && data.fullName.trim().length > 0 &&
     typeof data.email === 'string' &&
     /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(data.email) &&
     typeof data.phone === 'string' && data.phone.trim().length > 0
@@ -36,7 +34,7 @@ export async function POST(req: Request) {
       );
     }
 
-    const { name, surname, email, phone, date } = body;
+    const { fullName, email, phone, date } = body;
 
     // Check if required environment variables are set
     if (!process.env.GMAIL_USER || !process.env.GMAIL_PASS || !process.env.EMAIL_TO) {
@@ -66,8 +64,6 @@ export async function POST(req: Request) {
     // Verify transporter configuration
     await transporter.verify();
 
-    const fullName = `${name} ${surname}`.trim();
-
     const mailOptions = {
       from: `"${fullName}" <${process.env.GMAIL_USER}>`,
       to: process.env.EMAIL_TO,
@@ -80,7 +76,7 @@ export async function POST(req: Request) {
           
           <div style="background-color: #f9f9f9; padding: 20px; border-radius: 8px; margin: 20px 0;">
             <h3 style="color: #333; margin-top: 0;">Contact Information:</h3>
-            <p><strong>Name:</strong> ${fullName}</p>
+            <p><strong>Full Name:</strong> ${fullName}</p>
             <p><strong>Email:</strong> <a href="mailto:${email}">${email}</a></p>
             <p><strong>Phone:</strong> <a href="tel:${phone}">${phone}</a></p>
             ${date ? `<p><strong>Preferred Date:</strong> ${date}</p>` : ''}
@@ -103,7 +99,7 @@ export async function POST(req: Request) {
 New Trip Inquiry from ${fullName}
 
 Contact Information:
-- Name: ${fullName}
+- Full Name: ${fullName}
 - Email: ${email}
 - Phone: ${phone}
 ${date ? `- Preferred Date: ${date}` : ''}

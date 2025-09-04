@@ -15,7 +15,7 @@ const Explore = () => {
               const element = document.getElementById('explore');
               element?.scrollIntoView({ behavior: 'smooth' });
             }}
-            className="bg-[#9B6B5A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#865746] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9B6B5A]/50"
+            className="bg-[#9B6B5A] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#865746] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9B6B5A]/50 cursor-pointer"
           >
             Explore
           </button>

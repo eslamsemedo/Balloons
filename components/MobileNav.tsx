@@ -16,7 +16,7 @@ export default function MobileNav({ navItems }: MobileNavProps) {
       {/* Hamburger Button */}
       <button
         onClick={toggleMenu}
-        className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 ring-1 ring-white/30 backdrop-blur-sm"
+        className="md:hidden flex items-center justify-center w-10 h-10 rounded-lg bg-white/10 ring-1 ring-white/30 backdrop-blur-sm cursor-pointer"
         aria-label="Toggle mobile menu"
       >
         {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -49,7 +49,7 @@ export default function MobileNav({ navItems }: MobileNavProps) {
               </div>
               <button
                 onClick={toggleMenu}
-                className="p-2 rounded-lg hover:bg-gray-100"
+                className="p-2 rounded-lg hover:bg-gray-100 cursor-pointer"
                 aria-label="Close menu"
               >
                 <X size={20} className="text-gray-600" />
@@ -85,10 +85,10 @@ export default function MobileNav({ navItems }: MobileNavProps) {
                 <a href="#" aria-label="Instagram" className="p-2 rounded-lg hover:bg-gray-100">
                   <Instagram size={20} className="text-gray-600" />
                 </a>
-                <button aria-label="Search" className="p-2 rounded-lg hover:bg-gray-100">
+                <button aria-label="Search" className="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
                   <Search size={20} className="text-gray-600" />
                 </button>
-                <button aria-label="Account" className="p-2 rounded-lg hover:bg-gray-100">
+                <button aria-label="Account" className="p-2 rounded-lg hover:bg-gray-100 cursor-pointer">
                   <User size={20} className="text-gray-600" />
                 </button>
               </div>

@@ -22,7 +22,7 @@ const ExploreMore = () => {
                 const element = document.getElementById('gallery');
                 element?.scrollIntoView({ behavior: 'smooth' });
               }}
-              className="rounded-lg bg-[#9B6B5A] px-6 py-3 text-white font-medium hover:bg-[#865746] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9B6B5A]/50"
+              className="rounded-lg bg-[#9B6B5A] px-6 py-3 text-white font-medium hover:bg-[#865746] transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#9B6B5A]/50 cursor-pointer"
             >
               Open Gallery
             </button>

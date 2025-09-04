@@ -112,7 +112,7 @@ export default function HotAirHero({
     return () => window.removeEventListener("keydown", handler);
   });
 
-  const nav = ["About", "Our tours", "Explore", "Guides", "Contacts"];
+  const nav = ["About", "Tours", "Explore", "Guides", "Contacts"];
 
   return (
     <section
@@ -144,8 +144,14 @@ export default function HotAirHero({
         <div className="flex items-center gap-10">
           {/* Logo */}
           <div className="flex items-center gap-3">
-            <div className="grid h-10 w-10 place-items-center rounded-full bg-white/10 ring-1 ring-white/30 backdrop-blur-sm">
-              <span className="text-lg font-black tracking-tight">hb</span>
+            <div className="relative h-10 w-10  backdrop-blur-sm ">
+              <Image
+                src="/img/logo.png"
+                alt="HotAir Balloons Logo"
+                fill
+                className="object-cover"
+                sizes="40px"
+              />
             </div>
             <div className="leading-tight">
               <p className="text-sm font-semibold uppercase tracking-widest">HotAir</p>
@@ -157,17 +163,21 @@ export default function HotAirHero({
           <nav className="hidden md:block">
             <ul className="flex items-center gap-8 text-sm">
               {nav.map((item, i) => (
-                <li key={item} className="relative pb-3">
-                  <a
-                    href={`#${item.toLowerCase().replace(/\s+/g, '-')}`}
-                    className={`transition-colors hover:opacity-100 ${i === 0 ? "opacity-100" : "opacity-80"
-                      }`}
+                <li key={item} className="relative ">
+                  <button
+                    onClick={() => {
+                      const element = document.getElementById(item.toLowerCase().replace(/\s+/g, '-'));
+                      if (element) {
+                        element.scrollIntoView({ behavior: 'smooth' });
+                      }
+                    }}
+                    className={`relative transition-all duration-300 hover:opacity-100 ${i === 0 ? "opacity-100" : "opacity-80"
+                      } group cursor-pointer`}
                   >
                     {item}
-                  </a>
-                  {i === 0 && (
-                    <span className="absolute -bottom-0.5 left-0 h-[2px] w-full bg-white" />
-                  )}
+                    <span className="absolute -bottom-0.5 left-0 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
+                  </button>
+
                 </li>
               ))}
             </ul>
@@ -227,7 +237,7 @@ export default function HotAirHero({
               aria-selected={i === index}
               aria-controls={`hero-slide-${i}`}
               onClick={() => goTo(i)}
-              className={`h-2 w-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white/80 ${i === index ? "scale-125 bg-white" : "bg-white/70 hover:bg-white/90"
+              className={`h-2 w-2 rounded-full transition-all focus:outline-none focus:ring-2 focus:ring-white/80 cursor-pointer ${i === index ? "scale-125 bg-white" : "bg-white/70 hover:bg-white/90"
                 }`}
             />
           ))}

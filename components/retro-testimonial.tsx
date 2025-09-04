@@ -146,14 +146,14 @@ const Carousel = ({ items, initialScroll = 100 }: iCarouselProps) => {
       </div>
       <div className="flex justify-end gap-2 mt-4">
         <button
-          className="relative z-40 h-10 w-10 rounded-full bg-[#4b3f33] flex items-center justify-center disabled:opacity-50 hover:bg-[#4b3f33]/80 transition-colors duration-200"
+          className="relative z-40 h-10 w-10 rounded-full bg-[#4b3f33] flex items-center justify-center disabled:opacity-50 hover:bg-[#4b3f33]/80 transition-colors duration-200 cursor-pointer"
           onClick={handleScrollLeft}
           disabled={!canScrollLeft}
         >
           <ArrowLeft className="h-6 w-6 text-[#f2f0eb]" />
         </button>
         <button
-          className="relative z-40 h-10 w-10 rounded-full bg-[#4b3f33] flex items-center justify-center disabled:opacity-50 hover:bg-[#4b3f33]/80 transition-colors duration-200"
+          className="relative z-40 h-10 w-10 rounded-full bg-[#4b3f33] flex items-center justify-center disabled:opacity-50 hover:bg-[#4b3f33]/80 transition-colors duration-200 cursor-pointer"
           onClick={handleScrollRight}
           disabled={!canScrollRight}
         >
@@ -239,7 +239,7 @@ const TestimonialCard = ({
               className="max-w-5xl mx-auto bg-gradient-to-b from-[#f2f0eb] to-[#fff9eb] h-full z-[60] p-4 md:p-10 rounded-3xl relative md:mt-10"
             >
               <button
-                className="sticky top-4 h-8 w-8 right-0 ml-auto rounded-full flex items-center justify-center bg-[#4b3f33]"
+                className="sticky top-4 h-8 w-8 right-0 ml-auto rounded-full flex items-center justify-center bg-[#4b3f33] cursor-pointer"
                 onClick={handleCollapse}
               >
                 <X className="h-6 w-6 text-white dark:text-neutral-900 absolute" />
@@ -266,7 +266,7 @@ const TestimonialCard = ({
       </AnimatePresence>
       <motion.button
         layoutId={layout ? `card-${testimonial.name}` : undefined}
-        onClick={handleExpand}
+        // onClick={handleExpand}
         className=""
         whileHover={{
           rotateX: 2,

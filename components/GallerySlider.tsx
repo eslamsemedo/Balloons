@@ -8,6 +8,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import { Button } from "./ui/button";
 
 type Img = { id: string; src: string; alt?: string };
 
@@ -68,23 +69,39 @@ export default function GallerySlider({
   }, [api, recalc]);
 
   return (
-    <section id="gallery" className="px-4 py-12">
-      <div className="mx-auto max-w-7xl">
+    <section id="gallery" className="">
+      <div className="padd">
         <div className="flex items-center justify-end gap-2 pb-4">
-          <button
+          {/* <button
             aria-label="Previous"
             onClick={() => api?.scrollPrev()}
-            className="rounded-md border px-2 py-2 hover:bg-gray-50"
+            className="rounded-md border px-2 py-2 hover:bg-gray-50 cursor-pointer"
           >
             <ArrowLeft className="h-4 w-4" />
           </button>
           <button
             aria-label="Next"
             onClick={() => api?.scrollNext()}
-            className="rounded-md border px-2 py-2 hover:bg-gray-50"
+            className="rounded-md border px-2 py-2 hover:bg-gray-50 cursor-pointer"
           >
             <ArrowRight className="h-4 w-4" />
-          </button>
+          </button> */}
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={() => api?.scrollPrev()}
+            className="disabled:pointer-events-auto cursor-pointer"
+          >
+            <ArrowLeft className="size-5" />
+          </Button>
+          <Button
+            size="icon"
+            variant="ghost"
+            onClick={() => api?.scrollNext()}
+            className="disabled:pointer-events-auto cursor-pointer"
+          >
+            <ArrowRight className="size-5" />
+          </Button>
         </div>
 
         <Carousel

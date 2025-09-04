@@ -1,5 +1,6 @@
 import React from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
+import Image from "next/image";
 
 const FooterHotair: React.FC = () => {
   return (
@@ -10,21 +11,16 @@ const FooterHotair: React.FC = () => {
           <div className="lg:col-span-5">
             <div className="flex items-start gap-6">
               {/* Logo placeholder (use your image src) */}
-              <img
-                src="https://placehold.co/100x100"
+              <Image
+                src="/img/logo.png"
                 alt="Hotair Balloons Luxor"
-                className="w-20 h-20 object-contain"
+                width={80}
+                height={80}
+                className="object-contain"
               />
               <div className="border-l border-white/20 pl-6">
                 <div className="flex items-center gap-3">
                   {/* small balloon icon */}
-                  <svg
-                    viewBox="0 0 24 24"
-                    className="w-6 h-6 text-white/90"
-                    fill="currentColor"
-                  >
-                    <path d="M12 2a7 7 0 0 0-7 7c0 3.72 3.13 6.48 5.45 9.38.31.39.92.39 1.23 0C15.87 15.48 19 12.72 19 9a7 7 0 0 0-7-7zm0 20a2 2 0 0 0 2-2h-4a2 2 0 0 0 2 2z" />
-                  </svg>
                   <h3 className="text-xl font-semibold">Hotair Adventures</h3>
                 </div>
 
@@ -133,7 +129,8 @@ const FooterHotair: React.FC = () => {
         {/* divider + copyright */}
         <hr className="mt-10 border-white/30" />
         <p className="text-center text-white/80 text-sm py-4">
-          hotair Adventures ©Copyright 2025. All rights reserved.
+          HotAir Balloons Luxor ©Copyright 2025. All rights reserved.
+
         </p>
       </div>
     </footer>

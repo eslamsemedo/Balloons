@@ -74,7 +74,7 @@ const data = [
 ];
 
 const Gallery4 = ({
-  title = "Case Studies",
+  title = "eslam",
   description = "Discover how leading companies and developers are leveraging modern web technologies to build exceptional digital experiences. These case studies showcase real-world applications and success stories.",
   items = data,
 }: Gallery4Props) => {
@@ -112,7 +112,7 @@ const Gallery4 = ({
         <div className=" flex items-end justify-between ">
           <div className="flex flex-col gap-4">
             <h2 className="text-3xl font-medium md:text-4xl lg:text-5xl">
-              {title}
+              Tours
             </h2>
             <p className="max-w-lg text-muted-foreground">{description}</p>
           </div>
@@ -124,7 +124,7 @@ const Gallery4 = ({
                 carouselApi?.scrollPrev();
               }}
               disabled={!canScrollPrev}
-              className="disabled:pointer-events-auto"
+              className="disabled:pointer-events-auto cursor-pointer"
             >
               <ArrowLeft className="size-5" />
             </Button>
@@ -135,7 +135,7 @@ const Gallery4 = ({
                 carouselApi?.scrollNext();
               }}
               disabled={!canScrollNext}
-              className="disabled:pointer-events-auto"
+              className="disabled:pointer-events-auto cursor-pointer"
             >
               <ArrowRight className="size-5" />
             </Button>
@@ -153,7 +153,7 @@ const Gallery4 = ({
             },
           }}
         >
-          <CarouselContent className=" 2xl:ml-[max(8rem,calc(50vw-700px))] 2xl:mr-[max(0rem,calc(50vw-700px))]">
+          <CarouselContent className=" ">
             {/* {items.map((item) => (
               <CarouselItem
                 key={item.id}
@@ -240,7 +240,7 @@ const Gallery4 = ({
           {items.map((_, index) => (
             <button
               key={index}
-              className={`h-2 w-2 rounded-full transition-colors ${currentSlide === index ? "bg-primary" : "bg-primary/20"
+              className={`h-2 w-2 rounded-full transition-colors cursor-pointer ${currentSlide === index ? "bg-primary" : "bg-primary/20"
                 }`}
               onClick={() => carouselApi?.scrollTo(index)}
               aria-label={`Go to slide ${index + 1}`}
