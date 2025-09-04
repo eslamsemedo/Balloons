@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Menu, X, Facebook, Instagram, Search, User } from "lucide-react";
 
 interface MobileNavProps {
@@ -10,6 +10,20 @@ export default function MobileNav({ navItems }: MobileNavProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  // Prevent body scroll when sidebar is open
+  useEffect(() => {
+    if (isOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    // Cleanup on unmount
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -23,8 +37,8 @@ export default function MobileNav({ navItems }: MobileNavProps) {
       </button>
 
       {/* Mobile Menu Overlay */}
-      <div className={`fixed inset-0 z-50 md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
-        }`}>
+      <div className={`fixed inset-0 z-[99999] md:hidden transition-all duration-300 ease-in-out ${isOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`} style={{ isolation: 'isolate' }}>
         {/* Backdrop */}
         <div
           className={`absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 ${isOpen ? 'opacity-100' : 'opacity-0'
@@ -33,8 +47,8 @@ export default function MobileNav({ navItems }: MobileNavProps) {
         />
 
         {/* Menu Panel */}
-        <div className={`absolute right-0 top-0 h-full w-80 bg-white/95 backdrop-blur-md shadow-2xl transition-transform duration-300 ease-in-out ${isOpen ? 'translate-x-0' : 'translate-x-full'
-          }`}>
+        <div className={`absolute right-0 top-0 h-full w-80 bg-white/95 backdrop-blur-md shadow-2xl transition-transform duration-300 ease-in-out z-[99999] ${isOpen ? 'translate-x-0' : 'translate-x-full'
+          }`} style={{ isolation: 'isolate' }}>
           <div className="flex flex-col h-full">
             {/* Header */}
             <div className="flex items-center justify-between p-6 border-b border-gray-200">
