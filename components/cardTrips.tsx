@@ -10,6 +10,7 @@ import {
   CarouselContent,
   CarouselItem,
 } from "@/components/ui/carousel";
+import Image from "next/image";
 
 export interface Gallery4Item {
   id: string;
@@ -33,7 +34,7 @@ const data = [
       "Explore how shadcn/ui revolutionized React component libraries by providing a unique approach to component distribution and customization, making it easier for developers to build beautiful, accessible applications.",
     href: "https://ui.shadcn.com",
     image:
-      "https://images.unsplash.com/photo-1551250928-243dc937c49d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjN8fHx8fHwyfHwxNzIzODA2OTM5fA&ixlib=rb-4.0.3&q=80&w=1080",
+      "/img/hero2.jpg",
   },
   {
     id: "tailwind",
@@ -42,7 +43,7 @@ const data = [
       "Discover how Tailwind CSS transformed the way developers style their applications, offering a utility-first approach that speeds up development while maintaining complete design flexibility.",
     href: "https://tailwindcss.com",
     image:
-      "https://images.unsplash.com/photo-1551250928-e4a05afaed1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjR8fHx8fHwyfHwxNzIzODA2OTM5fA&ixlib=rb-4.0.3&q=80&w=1080",
+      "/img/hero2.jpg",
   },
   {
     id: "astro",
@@ -51,7 +52,7 @@ const data = [
       "Learn how Astro's innovative 'Islands Architecture' and zero-JS-by-default approach is helping developers build faster websites while maintaining rich interactivity where needed.",
     href: "https://astro.build",
     image:
-      "https://images.unsplash.com/photo-1536735561749-fc87494598cb?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxNzd8fHx8fHwyfHwxNzIzNjM0NDc0fA&ixlib=rb-4.0.3&q=80&w=1080",
+      "/img/hero2.jpg",
   },
   {
     id: "react",
@@ -60,7 +61,7 @@ const data = [
       "See how React continues to shape modern web development with its component-based architecture, enabling developers to build complex user interfaces with reusable, maintainable code.",
     href: "https://react.dev",
     image:
-      "https://images.unsplash.com/photo-1548324215-9133768e4094?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMzF8fHx8fHwyfHwxNzIzNDM1MzA1fA&ixlib=rb-4.0.3&q=80&w=1080",
+      "/img/hero2.jpg",
   },
   {
     id: "nextjs",
@@ -69,7 +70,7 @@ const data = [
       "Explore how Next.js has become the go-to framework for building full-stack React applications, offering features like server components, file-based routing, and automatic optimization.",
     href: "https://nextjs.org",
     image:
-      "https://images.unsplash.com/photo-1550070881-a5d71eda5800?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w2NDI3NzN8MHwxfGFsbHwxMjV8fHx8fHwyfHwxNzIzNDM1Mjk4fA&ixlib=rb-4.0.3&q=80&w=1080",
+      "/img/hero2.jpg",
   },
 ];
 
@@ -192,9 +193,11 @@ const Gallery4 = ({
                 <div className="rounded-2xl border bg-white shadow-sm overflow-hidden group">
                   {/* Image */}
                   <div className="relative aspect-[3/3] w-full">
-                    <img
-                      src={item.image}
+                    <Image
+                      src={item.image || "/img/hero2.jpg"}
                       alt={item.title}
+                      width={300}
+                      height={300}
                       className="absolute inset-0 h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     {/* Rating pill */}
